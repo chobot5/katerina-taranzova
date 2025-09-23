@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+    --color-light: #faf6f1;
+    --color-primary: #2e9d58;
+    --color-secondary: #2e9d58;
+    --color-tertiary: #b6ffe0;
+    --color-dark: #0b4a23;
+    --color-content: #0b4a23;
+    --color-ico: #F9EDE0;
+}
+
+html,body {
+    font-family: "Nunito", sans-serif;
+    color: var(--color-content);
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
+p {
+    line-height: 1.6rem;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+.head-bg {
+    margin-top: -100px;
+    background: #ffd9d4;
+    background: linear-gradient(139deg,rgba(255, 217, 212, 1) 0%, rgba(255, 246, 214, 1) 48%, rgba(255, 247, 235, 1) 100%);
+}
+
+nav > section {
+    height: 100%;
+}
+
+.issue-list {
+    text-align: left;
+    list-style: disc;
+    margin-left: 10px;
+}
+
+/* Flip card */
+.flip-card {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.card-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 10px;
+}
+
+.card-front {
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-front > div,.card-back > div {
+    height: 100%;
+}
+
+.flip-btn {
+    margin-top: 1rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}

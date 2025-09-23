@@ -1,0 +1,12 @@
+---
+import { cn } from '../../utils/cn'
+interface Props {
+  class?: string
+}
+
+const { class: customClass } = Astro.props
+---
+
+<div class={cn('bg-white p-6 shadow-sm rounded-xl border border-gray-100 text-content', customClass)}>
+  <slot />
+</div>

@@ -1,0 +1,28 @@
+---
+import { cn } from '../../utils/cn'
+type ButtonTheme = 'primary' | 'secondary'
+
+interface Props {
+  theme: ButtonTheme
+  href: string
+  class?: string
+}
+
+const { theme = 'primary', href, class: customClass } = Astro.props
+
+const themeMap: Record<ButtonTheme, string> = {
+  primary: 'bg-primary text-white hover:bg-primary/90',
+  secondary: 'text-secondary border border-primary flex items-center hover:bg-primary/10',
+}
+---
+
+<a
+  href={href}
+  class={cn(
+    'py-3 px-6 rounded-lg border-2 border-content/10 text-center w-full md:w-auto duration-200 font-bold',
+    themeMap[theme],
+    customClass,
+  )}
+>
+  <slot />
+</a>

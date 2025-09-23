@@ -1,0 +1,30 @@
+---
+import Box from './Box.astro'
+
+
+---
+
+<div class='flip-card' id='flip-card'>
+  <div class='card-inner h-full w-full relative'>
+    <Box class='card-front'>
+      <slot name="front" class="h-full" />
+      <button type="button" id="flip-button" class='absolute top-[10px] right-[10px] cursor-pointer'>
+        <img class="w-[16px]" src="/icons/rotate.svg" alt="" />
+      </button>
+    </Box>
+    <Box class='card-back bg-primary text-white'>
+      <slot name="back" class="h-full" />
+      <button type="button" id="flip-button" class='absolute top-[10px] right-[10px] cursor-pointer'>
+        <img class="w-[16px]" src="/icons/rotate_white.svg" alt="" />
+      </button>
+    </Box>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('#flip-button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      btn.closest('.flip-card').classList.toggle('is-flipped')
+    })
+  })
+</script>

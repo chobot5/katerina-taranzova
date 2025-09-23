@@ -1,0 +1,21 @@
+---
+
+import Backlink from '../components/Backlink.astro'
+import Layout from '../layouts/Layout.astro'
+import Content from '../components/ui/Content.astro'
+import H1 from '../components/ui/H1.astro'
+import LinkButton from '../components/ui/LinkButton.astro'
+
+---
+
+<Layout>
+  <main>
+    <Content bg="white">
+      <div class="text-center">
+        <strong class="text-dark text-2xl">404</strong>
+        <div class="pt-8"><H1>Stránka nenalezena</H1></div>
+        <LinkButton href="/" theme="primary">Zpět na homepage</LinkButton>
+      </div>
+    </Content>
+  </main>
+</Layout>
