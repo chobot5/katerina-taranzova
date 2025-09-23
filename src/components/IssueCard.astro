@@ -12,7 +12,7 @@ const { icon } = Astro.props
 
 <FlipCard>
     <div slot="front">
-      <div class="grid grid-rows-[70px_1fr] gap-4 h-full mt-10">
+      <div class="grid grid-rows-[70px_1fr] gap-4 h-full pt-5 md:pt-10">
         <img src={`/icons/${icon}.webp`} alt="relationship" class="w-[70px] mx-auto max-h-[70px]"/>
         <Text class="text-sm text-center leading-[1.2rem]! mb-0"><slot name="front" /></Text>
       </div>

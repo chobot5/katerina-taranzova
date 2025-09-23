@@ -8,14 +8,13 @@ import LinkButton from '../components/ui/LinkButton.astro'
 import Text from '../components/ui/Text.astro'
 import H1 from '../components/ui/H1.astro'
 import H3 from '../components/ui/H3.astro'
-import FlipCard from '../components/ui/FlipCard.astro'
 import IssueCard from '../components/IssueCard.astro'
 ---
 
 <Layout>
   <header class='head-bg pt-[80px] pb-[40px]'>
     <Content bg='transparent'>
-      <div class='grid grid-cols-[1fr_auto] gap-8 items-center'>
+      <div class='grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center justify-items-center'>
         <div>
           <H1>Mgr. Kateřina Taranzová</H1>
           <Text>
@@ -32,7 +31,7 @@ import IssueCard from '../components/IssueCard.astro'
             <LinkButton href='/o-mne' theme='secondary'>Více o mně</LinkButton>
           </div>
         </div>
-        <div class='bg-primary rounded-full w-[200px] h-[200px]'></div>
+        <div class='bg-primary rounded-full w-[200px] h-[200px] row-span-full md:row-auto'></div>
       </div>
     </Content>
   </header>
@@ -43,7 +42,7 @@ import IssueCard from '../components/IssueCard.astro'
         Pracuji i s těmi, kteří si potřebují <i>„prostě promluvit“</i>, protože je trápí <i>„ani neví co, a možná je to blbost“</i>. Každý, kdo se potýká s něčím, co narušuje jeho psychickou pohodu v běžném životě, zde může najít bezpečný
         prostor k porozumění a změně.
       </Text>
-      <div class="grid grid-cols-3 gap-4 auto-rows-[250px]">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]">
         <IssueCard icon="1-relationship">
           <span slot="front"><strong class="text-lg block leading-[1.4rem]! mb-2">Vztahové obtíže</strong>rodinné, partnerské, přátelské či jiné vztahy</span>
           <span slot="back"><i>„Nedaří se mi ve vztazích a nevím proč/vím proč, ale jsem bezradný/á, co s tím nic dělat."</i></span>
@@ -105,7 +104,7 @@ import IssueCard from '../components/IssueCard.astro'
         <IssueCard icon="8-life-ups-and-downs">
           <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Náročné životní situace</strong></span>
           <div slot="back">
-            <Text>Následky traumatu či životní ztráty (úmrtí, rozchod, náhlé změny)</Text>
+            <Text class="leading-[1.2rem]!">Následky traumatu či životní ztráty (úmrtí, rozchod, náhlé změny)</Text>
           </div>
         </IssueCard>
         <div class="flex items-center justify-center">
@@ -115,7 +114,7 @@ import IssueCard from '../components/IssueCard.astro'
     </Content>
     <Content bg='light' id="jak-to-probiha">
       <H2>Jak to probíhá</H2>
-      <div class='grid grid-cols-2 gap-4'>
+      <div class='grid grid-cols-1 md:grid-cols-2 gap-4'>
         <Box>
           <H3>První setkání</H3>
           <Text>
@@ -149,7 +148,7 @@ import IssueCard from '../components/IssueCard.astro'
     <Content bg='light'>
       <H2>Kontakt</H2>
       <Text>Kontaktovat mě můžete pomocí kontaktního formuláře nebo na e-mail. Odpovídám obvykle do 48 hodin.</Text>
-      <div class='grid grid-cols-2 gap-4'>
+      <div class='grid grid-cols-1 md:grid-cols-2 gap-4'>
         <Box class='grid grid-rows-[1fr_auto] gap-4'>
           <H3 class="mt-0">Kde mě najdete</H3>
           <ul>
