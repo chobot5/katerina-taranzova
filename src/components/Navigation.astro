@@ -11,15 +11,73 @@ const links: { href: string; label: string }[] = [
 <div id="navbar" class="fixed z-40 top-0 text-white h-[100px] w-full backdrop-blur-md border-b-[#e7e7e7]">
   <div id="navbar__bg" class="w-full h-full opacity-70 backdrop-blur-xs transition-colors duration-500"></div>
   <nav class="absolute top-0 w-full h-full">
-    <Content bg='transparent' class="py-0 w-full h-full">
-      <div class="flex justify-between items-center h-full">
-        <a href="/"> <strong class='inline-block text-lg text-content'>Logo</strong></a>
-        <ul class="flex gap-6 text-md">
-          {links.map(link => <li><a href={link.href} class="text-content font-semibold pb-1 pr-2 duration-200 border-b-2 border-b-transparent  hover:border-b-content hover:scale-105 inline-block">{link.label}</a></li> )}
-        </ul>
-      </div>
-    </Content>
+    <div class="hidden md:block">
+      <Content bg='transparent' class="py-0 w-full h-full">
+        <div class="flex justify-between items-center h-full">
+          <a href="/"><strong class='inline-block text-lg text-content'>Logo</strong></a>
+          <ul class="flex gap-6 text-md">
+            {links.map(link => <li><a href={link.href} class="text-content font-semibold pb-1 pr-2 duration-200 border-b-2 border-b-transparent  hover:border-b-content hover:scale-105 inline-block">{link.label}</a></li> )}
+          </ul>
+        </div>
+      </Content>
+    </div>
+    <div id="mobile-menu-closed" class="md:hidden h-[100px]">
+      <Content bg='transparent' class="p-0 w-full h-full">
+        <div class="h-[100px] flex justify-between items-center px-8">
+          <a href="/"><strong class='inline-block text-lg text-content'>Logo</strong></a>
+          <div>
+            <button id="mobile-menu-button" type="button"><img src="/icons/burger-menu.svg" alt="menu" class="h-[70px] w-[40px]" /></button>
+          </div>
+        </div>
+      </Content>
+    </div>
+    <dialog class="mobile-menu bg-white h-dvh m-0" id="mobile-menu-open">
+      <Content bg="transparent" class="pt-0">
+        <div class="h-[100px] flex justify-end items-center pr-4">
+          <button id="mobile-close-button" type="button"><img src="/icons/close.svg" alt="menu"  class="h-[30px] w-[30px]" /></button>
+        </div>
+        <div>
+          <ul class="flex flex-col md:flex-row items-center justify-end gap-4 h-full font-bold text-slate-800 text-md mt-8">
+            <li class="mb-4">
+              <a href="/">
+                <strong class='inline-block text-lg text-content'>Logo</strong>
+              </a>
+            </li>
+            {links.map(link => (
+              <li>
+                <a class='duration-200 px-4 py-2' href={link.href}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Content>
+    </dialog>
+    <script>
+      const mobileBurgerButton = document.getElementById('mobile-menu-button');
+      const mobileOpenMenu = document.getElementById('mobile-menu-open') as HTMLDialogElement;
+      const mobileCloseButton = document.getElementById('mobile-close-button');
+
+      const mobileMenuLinks= document.querySelectorAll('#mobile-menu-open a');
+
+      mobileBurgerButton?.addEventListener('click', () => {
+        mobileOpenMenu?.showModal()
+      });
+
+      mobileCloseButton?.addEventListener("click", () => {
+        mobileOpenMenu.close()
+      });
+
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileOpenMenu.close();
+        });
+      });
+
+    </script>
   </nav>
+
 </div>
 
 <script>
@@ -29,11 +87,11 @@ const links: { href: string; label: string }[] = [
   window.addEventListener("scroll", () => {
     console.log(window.scrollY)
     if (window.scrollY > 100) {
-      navbar.classList.add("border-b")
-      navbarBg.classList.add("bg-white");
+      navbar?.classList.add("border-b")
+      navbarBg?.classList.add("bg-white");
     } else {
-      navbar.classList.remove("border-b")
-      navbarBg.classList.remove("bg-white");
+      navbar?.classList.remove("border-b")
+      navbarBg?.classList.remove("bg-white");
     }
   });
 </script>
