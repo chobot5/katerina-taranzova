@@ -45,7 +45,11 @@ import IssueCard from '../components/IssueCard.astro'
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]">
         <IssueCard icon="1-relationship">
           <span slot="front"><strong class="text-lg block leading-[1.4rem]! mb-2">Vztahové obtíže</strong>rodinné, partnerské, přátelské či jiné vztahy</span>
-          <span slot="back"><i>„Nedaří se mi ve vztazích a nevím proč/vím proč, ale jsem bezradný/á, co s tím nic dělat."</i></span>
+          <span slot="back">
+            <Text class="text-left">
+              <i>„Nedaří se mi ve vztazích a nevím proč/vím proč, ale jsem bezradný/á, co s tím nic dělat."</i>
+            </Text>
+          </span>
         </IssueCard>
         <IssueCard icon="2-trust-intimacy">
           <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Obtíže s blízkostí nebo důvěrou, s osamělostí</strong></span>
@@ -88,7 +92,9 @@ import IssueCard from '../components/IssueCard.astro'
         <IssueCard icon="6-low-self-esteem">
           <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Nejistota, nízké sebevědomí nebo pochybnosti o sobě</strong></span>
           <div slot="back">
-            <i>„Někdy se nemůžu rozhodnout ani, co nakoupit, mám úplnou paralýzu.“</i>
+            <Text class="text-left leading-[1.2rem]!">
+              <i>„Někdy se nemůžu rozhodnout ani, co nakoupit, mám úplnou paralýzu.“</i>
+            </Text>
           </div>
         </IssueCard>
         <IssueCard icon="7-procrastination">
@@ -96,7 +102,7 @@ import IssueCard from '../components/IssueCard.astro'
           <div slot="back">
             <ul class="text-sm text-center issue-list">
               <li><i>„Nemůžu dokončit školu/práci/cokoliv.“</i></li>
-              <li><i>Na ToDo listu mám 317236362 položek, co bych měl/a udělat a stejně nedělám nic.“</i></li>
+              <li><i>„Na ToDo listu mám 317236362 položek, co bych měl/a udělat a stejně nedělám nic.“</i></li>
               <li><i>„Necítím nic, je to děsivé.“</i></li>
             </ul>
           </div>
@@ -104,7 +110,7 @@ import IssueCard from '../components/IssueCard.astro'
         <IssueCard icon="8-life-ups-and-downs">
           <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Náročné životní situace</strong></span>
           <div slot="back">
-            <Text class="leading-[1.2rem]!">Následky traumatu či životní ztráty (úmrtí, rozchod, náhlé změny)</Text>
+            <Text class="text-left leading-[1.2rem]!">Následky traumatu či životní ztráty (úmrtí, rozchod, náhlé změny)</Text>
           </div>
         </IssueCard>
         <div class="flex items-center justify-center">

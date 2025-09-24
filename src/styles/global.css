@@ -40,8 +40,10 @@ nav > section {
 
 .issue-list {
     text-align: left;
-    list-style: disc;
-    margin-left: 10px;
+}
+
+.issue-list li {
+    margin-bottom: 5px;
 }
 
 /* Flip card */
