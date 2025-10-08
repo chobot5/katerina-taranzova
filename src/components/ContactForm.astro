@@ -1,0 +1,108 @@
+---
+import TextField from './ui/TextField.astro'
+import Box from './ui/Box.astro'
+---
+
+<Box>
+  <form id='contact-form' novalidate>
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-4'>
+      <TextField id='name' name='name' label='Jméno:' type='text' />
+      <TextField
+        id='email'
+        name='email'
+        label='E-mail:'
+        type='email'
+        pattern='/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/'
+      />
+    </div>
+    <div class='flex flex-col gap-1 mt-4'>
+      <label for='message' class='font-semibold'>Zpráva pro mě:</label>
+      <textarea
+        id='message'
+        name='message'
+        required
+        class='bg-white border border-gray-300 rounded-md p-3 focus-visible:outline-secondary focus-visible:outline-[1px] user-invalid:focus-visible:outline-red-300 inset-shadow-sm inset-shadow-gray-100 field-sizing-content min-h-[100px]'
+        rows='4'></textarea>
+      <div class='error-message'></div>
+      <div class='mt-4 flex justify-center'>
+        <button
+          id='contact-form-submit'
+          type='submit'
+          class='bg-primary text-white hover:bg-primary/90 py-3 px-6 rounded-lg border-2 border-content/10 text-center w-full md:w-auto duration-200 font-bold flex items-center justify-center disabled:bg-gray-400 cursor-pointer'
+        >
+          Odeslat
+        </button>
+      </div>
+    </div>
+  </form>
+  <div id='success-message' class='h-[200px] place-content-center text-center hidden'>
+    <strong class='text-lg'>Zpráva byla úspěšně odeslána.</strong>
+    <p class='mt-4'>V nejbližší době se Vám ozvu na zaslanou e-mailovou adresu.</p>
+  </div>
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement
+    const contactFormSubmit = document.getElementById('contact-form-submit')
+
+    const showErrorMessage = (input: HTMLElement, message: string) => {
+      const errorMessageDiv = input.parentElement?.querySelector('.error-message')
+      if (errorMessageDiv) {
+        errorMessageDiv.textContent = message
+        errorMessageDiv.classList.add('text-red-500', 'text-sm')
+      }
+    }
+
+    const clearErrorMessage = (input: HTMLElement) => {
+      const errorMessageDiv = input.parentElement?.querySelector('.error-message')
+      if (errorMessageDiv) {
+        errorMessageDiv.textContent = ''
+        errorMessageDiv.classList.remove('text-red-500', 'text-sm')
+      }
+    }
+
+    form.addEventListener('input', (e) => {
+      const input = e.target as HTMLInputElement | HTMLTextAreaElement
+      if (input!.tagName === 'INPUT' || input!.tagName === 'TEXTAREA') {
+        if (input.checkValidity()) {
+          clearErrorMessage(input)
+        }
+      }
+    })
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault()
+
+      Array.from(form.elements).forEach((input) => {
+        if (input.tagName !== 'INPUT' && input.tagName !== 'TEXTAREA') return
+        const inputEl = input as HTMLInputElement | HTMLTextAreaElement
+        console.log(inputEl.validity)
+        if (!inputEl.checkValidity()) {
+          showErrorMessage(inputEl, inputEl.validity.valueMissing ? 'Toto pole je povinné' : 'Neplatný formát')
+        } else {
+          clearErrorMessage(inputEl)
+        }
+      })
+
+      if (!form.checkValidity()) {
+        return
+      }
+
+      const formData = new FormData(form)
+      const obj = Object.fromEntries(formData.entries())
+      contactFormSubmit?.setAttribute('disabled', 'true')
+
+      return fetch('/send', { method: 'POST', body: JSON.stringify(obj) })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log('data:', data)
+        })
+        .finally(() => {
+          const submitButton = document.getElementById('contact-form-submit')
+          submitButton?.removeAttribute('disabled')
+          const form = document.getElementById('contact-form') as HTMLFormElement
+          form.classList.add('hidden')
+          const message = document.getElementById('success-message')
+          message?.classList.remove('hidden')
+        })
+    })
+  </script>
+</Box>

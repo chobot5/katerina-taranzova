@@ -9,6 +9,7 @@ import Text from '../components/ui/Text.astro'
 import H1 from '../components/ui/H1.astro'
 import H3 from '../components/ui/H3.astro'
 import IssueCard from '../components/IssueCard.astro'
+import ContactForm from '../components/ContactForm.astro'
 ---
 
 <Layout>
@@ -18,13 +19,15 @@ import IssueCard from '../components/IssueCard.astro'
         <div>
           <H1>Mgr. Kateřina Taranzová</H1>
           <Text>
-            Jsem psycholožka ve zdravotnictví a kognitivně-behaviorální terapeutka. Psychoterapii ale přizpůsobuji
-            tomu, co klient právě potřebuje. Pomáhám najít bezpečný prostor, kde může dojít k hlubšímu porozumění sobě i
+            Jsem psycholožka ve zdravotnictví a kognitivně-behaviorální terapeutka. Psychoterapii ale přizpůsobuji tomu,
+            co klient právě potřebuje. Pomáhám najít bezpečný prostor, kde může dojít k hlubšímu porozumění sobě i
             vztahům. V mé praxi se zaměřuji na poskytování odborné pomoci a podpory dospívajícím a dospělým.
           </Text>
-          <div class="flex gap-3 mb-8">
-            <span class="px-2 py-1 rounded-full bg-[#efdbc7] text-sm font-bold border border-[#e0c9b2]">Praha</span>
-            <span class="px-2 py-1 rounded-full bg-[#efdbc7] text-sm font-bold border border-[#e0c9b2]">Odkudkoliv online</span>
+          <div class='flex gap-3 mb-8'>
+            <span class='px-2 py-1 rounded-full bg-[#efdbc7] text-sm font-bold border border-[#e0c9b2]'>Praha</span>
+            <span class='px-2 py-1 rounded-full bg-[#efdbc7] text-sm font-bold border border-[#e0c9b2]'
+              >Odkudkoliv online</span
+            >
           </div>
           <div class='flex gap-4'>
             <LinkButton href='/#s-cim-pomohu' theme='primary'>S čím pomůžu</LinkButton>
@@ -36,89 +39,110 @@ import IssueCard from '../components/IssueCard.astro'
     </Content>
   </header>
   <main>
-    <Content bg='white' id="s-cim-pomohu">
+    <Content bg='white' id='s-cim-pomohu'>
       <H2>S čím se na mě můžete obrátit</H2>
       <Text>
-        Pracuji i s těmi, kteří si potřebují <i>„prostě promluvit“</i>, protože je trápí <i>„ani neví co, a možná je to blbost“</i>. Každý, kdo se potýká s něčím, co narušuje jeho psychickou pohodu v běžném životě, zde může najít bezpečný
+        Pracuji i s těmi, kteří si potřebují <i>„prostě promluvit“</i>, protože je trápí <i
+          >„ani neví co, a možná je to blbost“</i
+        >. Každý, kdo se potýká s něčím, co narušuje jeho psychickou pohodu v běžném životě, zde může najít bezpečný
         prostor k porozumění a změně.
       </Text>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]">
-        <IssueCard icon="1-relationship">
-          <span slot="front"><strong class="text-lg block leading-[1.4rem]! mb-2">Vztahové obtíže</strong>rodinné, partnerské, přátelské či jiné vztahy</span>
-          <span slot="back">
-            <Text class="text-left leading-[1.2rem]!">
+      <div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]'>
+        <IssueCard icon='1-relationship'>
+          <span slot='front'
+            ><strong class='text-lg block leading-[1.4rem]! mb-2'>Vztahové obtíže</strong>rodinné, partnerské, přátelské
+            či jiné vztahy</span
+          >
+          <span slot='back'>
+            <Text class='text-left leading-[1.2rem]!'>
               <i>„Nedaří se mi ve vztazích a nevím proč/vím proč, ale jsem bezradný/á, co s tím nic dělat."</i>
             </Text>
           </span>
         </IssueCard>
-        <IssueCard icon="2-trust-intimacy">
-          <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Obtíže s blízkostí nebo důvěrou, s osamělostí</strong></span>
-          <div slot="back">
-            <ul class="text-sm issue-list">
+        <IssueCard icon='2-trust-intimacy'>
+          <span slot='front'
+            ><strong class='text-lg block leading-[1.4rem]!'>Obtíže s blízkostí nebo důvěrou, s osamělostí</strong
+            ></span
+          >
+          <div slot='back'>
+            <ul class='text-sm issue-list'>
               <li><i>„Dlouho mi trvá, než si někoho pustím k tělu.“</i></li>
               <li><i>„Mám tendence oversharovat, a pak si přijdu blbě.“</i></li>
             </ul>
           </div>
         </IssueCard>
-        <IssueCard icon="3-depression">
-          <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Úzkosti, deprese</strong></span>
-          <div slot="back">
-            <ul class="text-sm issue-list">
+        <IssueCard icon='3-depression'>
+          <span slot='front'><strong class='text-lg block leading-[1.4rem]!'>Úzkosti, deprese</strong></span>
+          <div slot='back'>
+            <ul class='text-sm issue-list'>
               <li><i>„Asi mám úzkosti. Nevím ale, co s nimi, ani odkud pochází.“</i></li>
               <li><i>„Mám pořád hrozný strach a nevím proč.“</i></li>
               <li><i>„Poslední roky mě nic netěší, jsem hrozně unavený/á a roztěkaný/á.“</i></li>
             </ul>
           </div>
         </IssueCard>
-        <IssueCard icon="4-social-phobia">
-          <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Sociální úzkosti, sociální fobie, specifické fobie</strong></span>
-          <div slot="back">
-            <ul class="text-sm issue-list">
+        <IssueCard icon='4-social-phobia'>
+          <span slot='front'
+            ><strong class='text-lg block leading-[1.4rem]!'>Sociální úzkosti, sociální fobie, specifické fobie</strong
+            ></span
+          >
+          <div slot='back'>
+            <ul class='text-sm issue-list'>
               <li><i>„Radši nikam moc nechodím, abych se neznemožnil/a.“</i></li>
               <li><i>„Bojím se jezdit MHD.“</i></li>
             </ul>
           </div>
         </IssueCard>
-        <IssueCard icon="5-emotions">
-          <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Emoční obtíže</strong></span>
-          <div slot="back">
-            <ul class="text-sm text-center issue-list">
-              <li><i>„Poslední dobou se chovám jinak, jsem hrozně vzteklý/á. Vždycky jsem to uměl/a maskovat, ale teď to nejde“</i></li>
+        <IssueCard icon='5-emotions'>
+          <span slot='front'><strong class='text-lg block leading-[1.4rem]!'>Emoční obtíže</strong></span>
+          <div slot='back'>
+            <ul class='text-sm text-center issue-list'>
+              <li>
+                <i
+                  >„Poslední dobou se chovám jinak, jsem hrozně vzteklý/á. Vždycky jsem to uměl/a maskovat, ale teď to
+                  nejde“</i
+                >
+              </li>
               <li><i>„Prožívám všechno hrozně intenzivně, jsem přecitlivělý/á“.</i></li>
               <li><i>„Necítím nic, je to děsivé.“</i></li>
             </ul>
           </div>
         </IssueCard>
-        <IssueCard icon="6-low-self-esteem">
-          <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Nejistota, nízké sebevědomí nebo pochybnosti o sobě</strong></span>
-          <div slot="back">
-            <Text class="text-left leading-[1.2rem]!">
+        <IssueCard icon='6-low-self-esteem'>
+          <span slot='front'
+            ><strong class='text-lg block leading-[1.4rem]!'>Nejistota, nízké sebevědomí nebo pochybnosti o sobě</strong
+            ></span
+          >
+          <div slot='back'>
+            <Text class='text-left leading-[1.2rem]!'>
               <i>„Někdy se nemůžu rozhodnout ani, co nakoupit, mám úplnou paralýzu.“</i>
             </Text>
           </div>
         </IssueCard>
-        <IssueCard icon="7-procrastination">
-          <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Prokrastinace</strong></span>
-          <div slot="back">
-            <ul class="text-sm text-center issue-list">
+        <IssueCard icon='7-procrastination'>
+          <span slot='front'><strong class='text-lg block leading-[1.4rem]!'>Prokrastinace</strong></span>
+          <div slot='back'>
+            <ul class='text-sm text-center issue-list'>
               <li><i>„Nemůžu dokončit školu/práci/cokoliv.“</i></li>
               <li><i>„Na ToDo listu mám 317236362 položek, co bych měl/a udělat a stejně nedělám nic.“</i></li>
               <li><i>„Necítím nic, je to děsivé.“</i></li>
             </ul>
           </div>
         </IssueCard>
-        <IssueCard icon="8-life-ups-and-downs">
-          <span slot="front"><strong class="text-lg block leading-[1.4rem]!">Náročné životní situace</strong></span>
-          <div slot="back">
-            <Text class="text-left leading-[1.2rem]!">Následky traumatu či životní ztráty (úmrtí, rozchod, náhlé změny)</Text>
+        <IssueCard icon='8-life-ups-and-downs'>
+          <span slot='front'><strong class='text-lg block leading-[1.4rem]!'>Náročné životní situace</strong></span>
+          <div slot='back'>
+            <Text class='text-left leading-[1.2rem]!'
+              >Následky traumatu či životní ztráty (úmrtí, rozchod, náhlé změny)</Text
+            >
           </div>
         </IssueCard>
-        <div class="flex items-center justify-center">
-          <Text class="text-lg"><strong>A další ...</strong></Text>
+        <div class='flex items-center justify-center'>
+          <Text class='text-lg'><strong>A další ...</strong></Text>
         </div>
       </div>
     </Content>
-    <Content bg='light' id="jak-to-probiha">
+    <Content bg='light' id='jak-to-probiha'>
       <H2>Jak to probíhá</H2>
       <div class='grid grid-cols-1 md:grid-cols-2 gap-4'>
         <Box>
@@ -129,9 +153,9 @@ import IssueCard from '../components/IssueCard.astro'
             čím přichází, jak se cítíte, a co byste chtěli změnit.
           </Text>
           <Text>
-            Pokud se bude zdát, že Vám můj přístup a způsob práce
-            vyhovuje (a je vhodný pro řešení právě Vašich obtíží), stanovíme si další termín setkání. Pokud <i>„si to
-            nesedne“</i>, je v pořádku, v případě zájmu se pokusím pomoci s hledání někoho/něčeho vhodnějšího.
+            Pokud se bude zdát, že Vám můj přístup a způsob práce vyhovuje (a je vhodný pro řešení právě Vašich obtíží),
+            stanovíme si další termín setkání. Pokud <i>„si to nesedne“</i>, je v pořádku, v případě zájmu se pokusím
+            pomoci s hledání někoho/něčeho vhodnějšího.
           </Text>
         </Box>
         <Box>
@@ -141,22 +165,25 @@ import IssueCard from '../components/IssueCard.astro'
             dní. Pravidelnost docházení je důležitá pro progres v terapii.
           </Text>
           <Text>
-            Jakmile je dosaženo určitého pokroku, délka
-            mezi jednotlivými sezeními se postupně prodlužuje např. nejprve se setkáváme jednou za dva týdny, poté
-            jednou za tři týdny,… jednou měsíčně a dále.), vše se samozřejmě odvíjí i od potřeb a možností klienta.</Text>
+            Jakmile je dosaženo určitého pokroku, délka mezi jednotlivými sezeními se postupně prodlužuje např. nejprve
+            se setkáváme jednou za dva týdny, poté jednou za tři týdny,… jednou měsíčně a dále.), vše se samozřejmě
+            odvíjí i od potřeb a možností klienta.</Text
+          >
         </Box>
       </div>
     </Content>
-    <Content bg="white">
+    <Content bg='white'>
       <H2>Co o mně říkají klienti</H2>
       <div></div>
     </Content>
     <Content bg='light'>
       <H2>Kontakt</H2>
-      <Text>Kontaktovat mě můžete pomocí kontaktního formuláře nebo na e-mail. Odpovídám obvykle do 48 hodin.</Text>
+      <Text
+        >Kontaktovat mě můžete pomocí kontaktního formuláře nebo na e-mail. Odpovídám obvykle do&nbsp;48&nbsp;hodin.</Text
+      >
       <div class='grid grid-cols-1 md:grid-cols-2 gap-4'>
         <Box class='grid grid-rows-[1fr_auto] gap-4'>
-          <H3 class="mt-0">Kde mě najdete</H3>
+          <H3 class='mt-0'>Kde mě najdete</H3>
           <ul>
             <li>Nějaká ulice 66</li>
             <li>Praha</li>
@@ -165,16 +192,22 @@ import IssueCard from '../components/IssueCard.astro'
           <LinkButton theme='primary' href='/'>Ahoj</LinkButton>
         </Box>
         <Box class='grid grid-rows-[1fr_auto] gap-4'>
-          <H3 class="mt-0">Kontaktní údaje</H3>
+          <H3 class='mt-0'>Kontaktní údaje</H3>
           <ul>
             <li><strong>Kateřina Taranzová</strong></li>
             <li>IČO XXXXX</li>
           </ul>
           <LinkButton theme='primary' href='mailto:katerina.taranzova@gmail.com'>
-            <span class="flex gap-2 justify-center"><img src="/icons/mail.svg" alt="E-mail" class="w-[20px]" />
-            Napište mi</span>
+            <span class='flex gap-2 justify-center'>
+              <img src='/icons/mail.svg' alt='E-mail' class='w-[20px]' />
+              Napište mi
+            </span>
           </LinkButton>
         </Box>
+      </div>
+      <div class='my-8'>
+        <H2>Kontaktní formulář</H2>
+        <ContactForm />
       </div>
     </Content>
   </main>

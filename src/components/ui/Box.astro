@@ -7,6 +7,8 @@ interface Props {
 const { class: customClass } = Astro.props
 ---
 
-<div class={cn('bg-white p-6 shadow-sm rounded-xl border border-gray-100 text-content', customClass)}>
+<div
+  class={cn('bg-white p-6 shadow-md shadow-[#f8f1e8] rounded-xl border border-[#ede4dc]  text-content', customClass)}
+>
   <slot />
 </div>

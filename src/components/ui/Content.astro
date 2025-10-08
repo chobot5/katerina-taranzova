@@ -9,7 +9,7 @@ interface Props {
   id?: string
 }
 
-const { bg: bgValue,id, class: customClass } = Astro.props
+const { bg: bgValue, id, class: customClass } = Astro.props
 
 const bgMap: Record<BgType, string> = {
   white: 'white',
@@ -20,7 +20,7 @@ const bgMap: Record<BgType, string> = {
 ---
 
 <section class={cn(bgMap[bgValue])} id={id}>
-  <div class={cn('md:max-w-[768px] mx-auto py-12 px-8',customClass)}>
+  <div class={cn('md:max-w-[768px] mx-auto py-12 px-8', customClass)}>
     <slot />
   </div>
 </section>
