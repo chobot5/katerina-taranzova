@@ -5,6 +5,7 @@ export default {
     {
       files: "*.astro",
       options: {
+        bracketSameLine: true,
         parser: "astro",
         singleQuote: true,
         printWidth: 120,

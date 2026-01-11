@@ -23,8 +23,12 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-.vscode/
-/.vscode/
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # Local Netlify folder
 .netlify

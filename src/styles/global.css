@@ -5,9 +5,11 @@
     --color-primary: #2e9d58;
     --color-secondary: #2e9d58;
     --color-tertiary: #b6ffe0;
-    --color-dark: #0b4a23;
-    --color-content: #0b4a23;
+    --color-dark: #194029;
+    --color-content: #5a4e41;
     --color-ico: #F9EDE0;
+    --color-content-dark: #FBF6F1;
+    --color-content-light: #FDFBF7;
 }
 
 html,body {

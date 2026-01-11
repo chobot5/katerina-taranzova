@@ -1,0 +1,19 @@
+---
+import H3 from './ui/H3.astro'
+import Order from './ui/Order.astro'
+
+interface Props {
+  heading: string
+  order: number
+}
+
+const { heading, order } = Astro.props
+---
+
+<div class='grid grid-rows-[auto_auto_1fr] justify-items-center'>
+  <Order>{order}</Order>
+  <H3>{heading}</H3>
+  <div>
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{
+    "prettier.documentSelectors": ["**/*.astro"],
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+	    "source.organizeImports": "explicit",
+        "source.addMissingImports.ts": "explicit",
+        "source.removeUnusedImports": "explicit",
+        "source.sortImports": "explicit"
+	  },
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    "typescript.preferences.importModuleSpecifier": "project-relative",
+    "terminal.integrated.profiles.osx": {
+        "zsh": {
+            "path": "/bin/zsh",
+            "args": ["-l"]
+        }
+    },
+  "terminal.integrated.defaultProfile.osx": "zsh"
+}
