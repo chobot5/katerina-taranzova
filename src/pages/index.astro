@@ -14,7 +14,7 @@ import Text from '../components/ui/Text.astro'
 <Layout>
   <header class=''>
     <Content bg='dark'>
-      <div class='grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center justify-items-center'>
+      <div class='flex justify-between items-center md:flex-row flex-col gap-8'>
         <div>
           <H1>Mgr. Kateřina Taranzová</H1>
           <Text>Psycholožka ve zdravotnictví,<br /> kognitivně-behaviorální terapeutka</Text>
@@ -187,15 +187,15 @@ import Text from '../components/ui/Text.astro'
     <Content bg='light' id='kontakt'>
       <div>
         <H2>Kontakt</H2>
-        <div class='grid grid-cols-1 md:grid-cols-2 gap-8'>
-          <div class='mt-6'>
-            <Text class='text-left'
+        <div class='md:max-w-3/4 max-w-full mx-auto'>
+          <div class='my-6'>
+            <Text class='text-center'
               >Kontaktovat mě můžete pomocí kontaktního formuláře nebo na e-mail. <br />
               <strong>Odpovídám obvykle do&nbsp;48&nbsp;hodin.</strong>
             </Text>
             <div class='flex justify-center mt-8'>
               <LinkButton
-                class='inline-block max-w-max bg-primary text-white mx-auto hover:bg-primary/90'
+                class='inline-block max-w-full bg-primary text-white mx-auto hover:bg-primary/90'
                 theme='primary'
                 href='mailto:katerina.taranzova@gmail.com'>
                 <span class='flex gap-2 justify-center'>
@@ -211,12 +211,10 @@ import Text from '../components/ui/Text.astro'
     </Content>
     <Content bg='dark'>
       <H2>Kde se můžeme setkat</H2>
-      <div class='flex gap-8 flex-col md:flex-row'>
-        <div>
+      <div class='flex flex-col items-center'>
+        <div class='text-center mb-4'>
           <strong>Na adrese:</strong>
-          <Text class='mb-0'>Myslíkova 1998/30</Text>
-          <Text class='mb-0'>110 00</Text>
-          <Text class='mb-0'>Praha – Nové Město</Text>
+          <Text class='mb-0 text-center'>Myslíkova 1998/30, 110 00 Praha – Nové Město</Text>
         </div>
         <img
           src='/img/map.webp'
