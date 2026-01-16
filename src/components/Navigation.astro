@@ -15,7 +15,11 @@ const links: { href: string; label: string }[] = [
     <div class='hidden md:block'>
       <Content bg='transparent' class='py-0 w-full h-[60px]'>
         <div class='flex justify-between items-center h-full'>
-          <a href='/'><strong class='inline-block text-lg text-content font-serif'>Kateřina Taranzová</strong></a>
+          <div class='text-content font-bold'>
+            <a href='/' class='flex gap-2 items-center'>
+              <img src='/icons/psi.svg' alt='Psychologie Katka' class='w-[26px]' />Psychologie Katka</a
+            >
+          </div>
           <ul class='flex gap-6 text-md'>
             {
               links.map((link) => (
@@ -36,12 +40,14 @@ const links: { href: string; label: string }[] = [
     <div id='mobile-menu-closed' class='md:hidden h-[60px]'>
       <Content bg='transparent' class='p-0 w-full h-full'>
         <div class='h-[60px] flex justify-between items-center px-8'>
-          <a href='/'><strong class='inline-block text-lg text-content font-serif'>Kateřina Taranzová</strong></a>
-          <div>
-            <button id='mobile-menu-button' type='button'
-              ><img src='/icons/burger-menu.svg' alt='menu' class='h-[70px] w-[40px]' /></button
+          <div class='text-content font-bold'>
+            <a href='/' class='flex gap-2 items-center justify-center'>
+              <img src='/icons/psi.svg' alt='Psychologie Katka' class='w-[26px]' />Psychologie Katka</a
             >
           </div>
+          <button id='mobile-menu-button' type='button'
+            ><img src='/icons/burger-menu.svg' alt='menu' class='h-[32px] w-[32px]' /></button
+          >
         </div>
       </Content>
     </div>
@@ -49,17 +55,17 @@ const links: { href: string; label: string }[] = [
       <Content bg='transparent' class='pt-0'>
         <div class='h-[60px] flex justify-end items-center pr-4'>
           <button id='mobile-close-button' type='button'
-            ><img src='/icons/close.svg' alt='menu' class='h-[30px] w-[30px]' /></button
+            ><img src='/icons/close.svg' alt='menu' class='h-[22px] w-[22px]' /></button
+          >
+        </div>
+        <div class='text-content font-bold'>
+          <a href='/' class='flex gap-2 items-center justify-center'>
+            <img src='/icons/psi.svg' alt='Psychologie Katka' class='w-[26px]' />Psychologie Katka</a
           >
         </div>
         <div>
           <ul
             class='flex flex-col md:flex-row items-center justify-end gap-4 h-full font-bold text-slate-800 text-md mt-8'>
-            <li class='mb-4'>
-              <a href='/'>
-                <strong class='inline-block text-lg text-content font-serif'>Kateřina Taranzová</strong>
-              </a>
-            </li>
             {
               links.map((link) => (
                 <li>

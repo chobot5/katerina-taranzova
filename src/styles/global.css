@@ -83,10 +83,15 @@ nav > section {
 
 .card-back {
     transform: rotateY(180deg);
+    background: linear-gradient(180deg,rgba(45, 157, 88, 1) 0%, rgba(87, 199, 133, 1) 100%);
 }
 
 .card-front > div,.card-back > div {
     height: 100%;
+}
+.main-bg {
+    background-color: #FAEAD4 !important;
+    background: radial-gradient(circle,rgba(255, 219, 179, 1) 0%, rgba(250, 234, 212, 1) 100%);
 }
 
 .flip-btn {

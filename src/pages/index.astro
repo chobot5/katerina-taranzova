@@ -13,14 +13,14 @@ import Text from '../components/ui/Text.astro'
 
 <Layout>
   <header class=''>
-    <Content bg='dark'>
+    <Content bg='transparent' rowClass='main-bg'>
       <div class='flex justify-between items-center md:flex-row flex-col gap-8'>
         <div>
           <H1>Mgr. Kateřina Taranzová</H1>
           <Text>Psycholožka ve zdravotnictví,<br /> kognitivně-behaviorální terapeutka</Text>
           <div class='flex gap-3 mb-8'>
-            <span class='px-2 py-1 rounded-full bg-[#efdbc7] text-sm font-bold border border-content-light'>Praha</span>
-            <span class='px-2 py-1 rounded-full bg-[#efdbc7] text-sm font-bold border border-content-light'
+            <span class='px-2 py-1 rounded-full bg-[#dcbd98] text-sm font-bold border border-content/30'>Praha</span>
+            <span class='px-2 py-1 rounded-full bg-[#dcbd98] text-sm font-bold border border-content/30'
               >Odkudkoliv online</span
             >
           </div>
@@ -38,13 +38,8 @@ import Text from '../components/ui/Text.astro'
     </Content>
   </header>
   <main>
-    <Content bg='light' id='s-cim-pomohu'>
+    <Content bg='dark' id='s-cim-pomohu'>
       <H2>S čím se na mě můžete obrátit</H2>
-      <Text>
-        Pracuji i s těmi, kteří si potřebují „prostě promluvit“, protože je trápí „ani neví co, a možná je to blbost“.
-        Každý, kdo se potýká s něčím, co narušuje jeho psychickou pohodu v běžném životě, zde může najít bezpečný
-        prostor k porozumění a změně.
-      </Text>
       <div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-[200px] md:auto-rows-[250px]'>
         <IssueCard icon='1-relationship'>
           <span slot='front'
@@ -150,41 +145,49 @@ import Text from '../components/ui/Text.astro'
           <Text class='text-lg'><strong>A další ...</strong></Text>
         </div>
       </div>
+      <Text class='mt-8'>
+        Pracuji i s těmi, kteří si potřebují „prostě promluvit“, protože je trápí „ani neví co, a možná je to blbost“.
+        Každý, kdo se potýká s něčím, co narušuje jeho psychickou pohodu v běžném životě, zde může najít bezpečný
+        prostor k porozumění a změně.
+      </Text>
     </Content>
-    <Content bg='dark' id='jak-to-probiha'>
+    <Content bg='light' id='jak-to-probiha'>
       <H2>Jak to probíhá</H2>
       <div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
         <HowItWorksCard heading='První setkání' order={1}>
           <Text>
             Společně si domluvíme první úvodní setkání, na kterém si ujasníme základní rámec spolupráce – jak pracuji,
-            podmínky setkávání, jak probíhá apod.
+            podmínky setkávání apod.
           </Text>
           <Text>
             Pokud se bude zdát, že Vám můj přístup a způsob práce vyhovuje (a je vhodný pro řešení právě Vašich obtíží),
-            stanovíme si další termín setkání. Pokud <i>„si to nesedne“</i>, je v pořádku, v případě zájmu se pokusím
-            pomoci s hledání někoho/něčeho vhodnějšího.
+            stanovíme si další termín setkání. Pokud <i>„si to nesedne“</i>, je to v pořádku, v případě zájmu se pokusím
+            pomoci s hledání někoho/něčeho vhodnějšího pro Vás.
           </Text>
         </HowItWorksCard>
         <HowItWorksCard heading='Úvodní posouzení' order={2}>
           <Text>
-            Budu se ptát na Vaše obtíže, které Vás přivedly. Také se budu ptát, s čím přichází, jak se cítíte, a co
-            byste chtěli změnit.
+            Budu se ptát na Vaše obtíže, které Vás do terapie přivedly, jak se ohledně nich cítíte aj. Také se budu
+            ptát, co byste chtěli a potřebovali změnit. Pokud to nebude zkraje zcela jasné, je to v pořádku, na tom lze
+            společně pracovat a ujasnit si to v průběhu.
           </Text>
           <Text>
-            Dohodneme na frekvenci jednotlivých setkání. Sezení se zpočátku konají jednou týdně nebo jednou za čtrnáct
-            dní. Pravidelnost docházení je důležitá pro progres v terapii.
+            Spolu se dohodneme se na frekvenci setkávání. Terapie se zpočátku konají jednou týdně, maximálně jednou za
+            14 dní. Pravidelnost docházení je důležitá pro progres v terapii.
           </Text>
         </HowItWorksCard>
         <HowItWorksCard heading='Průběh setkávání' order={3}>
           <Text>
-            Jakmile je dosaženo určitého pokroku, délka mezi jednotlivými sezeními se postupně prodlužuje např. nejprve
-            se setkáváme jednou za dva týdny, poté jednou za tři týdny,… jednou měsíčně a dále.), vše se samozřejmě
-            odvíjí i od potřeb a možností klienta.</Text
-          >
+            Jakmile je dosaženo určitého pokroku, délka mezi jednotlivými terapiemi se postupně prodlužuje (např.
+            nejprve se setkáváme jednou za dva týdny, poté jednou za tři týdny, jednou měsíčně a déle.), nebo se
+            dohodneme na ukončení terapie.
+          </Text>
+          <Text>Vše se samozřejmě odvíjí i od potřeb a možností klienta, zakázku a cíle průběžně revidujeme.</Text>
+          <Text>Ukončení spolupráce probíhá po vzájemné dohodě.</Text>
         </HowItWorksCard>
       </div>
     </Content>
-    <Content bg='light' id='kontakt'>
+    <Content bg='dark' id='kontakt'>
       <div>
         <H2>Kontakt</H2>
         <div class='md:max-w-3/4 max-w-full mx-auto'>
@@ -209,7 +212,7 @@ import Text from '../components/ui/Text.astro'
         </div>
       </div>
     </Content>
-    <Content bg='dark'>
+    <Content bg='light'>
       <H2>Kde se můžeme setkat</H2>
       <div class='flex flex-col items-center'>
         <div class='text-center mb-4'>
