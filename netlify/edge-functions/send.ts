@@ -20,10 +20,11 @@ export default async (req: Request) => {
       subject: `Kontakt z webu: ${body.name}`,
       html: `<div><h1>Kontakt z webu: ${body.name}</h1><div>E-mail: ${body.email}</div><div>Zpráva: ${body.message}</div></div>`,
     });
+    return new Response(JSON.stringify({ success: true }));
   } catch (error) {
     console.log("Error sending email:", error);
+    return new Response(JSON.stringify({ success: false }));
   }
-  return new Response(JSON.stringify({ success: true }));
 };
 
 export const config: Config = { path: "/send", method: "POST" };
