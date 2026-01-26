@@ -3,6 +3,7 @@ import '../styles/global.css'
 import Content from '../components/ui/Content.astro'
 import Navigation from '../components/Navigation.astro'
 import Text from '../components/ui/Text.astro'
+import CookieConsent from '../components/cookie-consent/CookieConsent.astro'
 ---
 
 <!doctype html>
@@ -15,8 +16,8 @@ import Text from '../components/ui/Text.astro'
     <meta name='keywords' content='psychologie, psychoterapie, Kateřina Taranzová' />
     <meta property='og:title' content='Psychologie Kateřina Taranzová' />
     <meta property='og:description' content='Kateřina Taranzová, psychoterapie' />
-    <meta property='og:image' content='https://psychologie-katka.cz/img/main.webp' />
-    <meta property='og:url' content='https://psychologie-katka.cz' />
+    <meta property='og:image' content='https://www.psychologie-katka.cz/img/main.webp' />
+    <meta property='og:url' content='https://www.psychologie-katka.cz' />
     <meta property='og:site_name' content='www.psychologie-katka.cz' />
     <meta property='og:type' content='website' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
@@ -33,8 +34,31 @@ import Text from '../components/ui/Text.astro'
         navigation: auto;
       }
     </style>
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-M9M4VP65')
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src='https://www.googletagmanager.com/ns.html?id=GTM-M9M4VP65'
+        height='0'
+        width='0'
+        style='display:none;visibility:hidden'></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
     <div class='layout'>
       <Navigation />
       <div class='mt-[60px]'><slot /></div>
@@ -79,6 +103,7 @@ import Text from '../components/ui/Text.astro'
         </p>
       </footer>
     </div>
+    <CookieConsent />
   </body>
 </html>
 

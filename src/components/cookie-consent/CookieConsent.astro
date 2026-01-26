@@ -1,0 +1,16 @@
+---
+import 'vanilla-cookieconsent/dist/cookieconsent.css'
+import './cookie-consent.css'
+---
+
+<button type='button' data-cc='show-preferencesModal'>Show preferences modal</button>
+
+<script>
+  import { run } from 'vanilla-cookieconsent'
+  import { config } from './CookieConsent.ts'
+
+  // toggle custom black theme
+  document.body.classList.add('cc--root')
+
+  run(config)
+</script>
