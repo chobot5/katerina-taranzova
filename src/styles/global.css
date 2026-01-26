@@ -36,6 +36,10 @@ p {
     background: linear-gradient(139deg,rgba(255, 217, 212, 1) 0%, rgba(255, 246, 214, 1) 48%, rgba(255, 247, 235, 1) 100%);
 }
 
+button[data-cc] {
+    display: none;
+}
+
 nav > section {
     height: 100%;
 }
